@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikolay Korovaiko - Blog</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Social Meta Tags -->
+    <meta property="og:title" content="Nikolay Korovaiko - Blog">
+    <meta property="og:description" content="Compiler Engineer. Performance Optimization. Distributed Systems.">
+    <meta property="og:image" content="https://korovaiko.dev/ascii_pic2.png">
+    <meta property="og:url" content="https://korovaiko.dev/blog.html">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+    <div class="editor-window">
+        <!-- Title Bar -->
+        <div class="title-bar">
+            <div class="window-controls">
+                <div class="control close"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
+            </div>
+            <div class="window-title">Blog — nikolayk</div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-bar">
+            <a href="index.html" class="tab ">
+                <span class="file-icon md">M↓</span> about_me.md
+            </a>
+            <a href="projects.html" class="tab ">
+                <span class="file-icon cpp">C++</span> projects.md
+            </a>
+            <a href="contact.html" class="tab ">
+                <span class="file-icon md">M↓</span> contact.md
+            </a>
+            <a href="resume.html" class="tab ">
+                <span class="file-icon md">M↓</span> resume.md
+            </a>
+            <a href="blog.html" class="tab active">
+                <span class="file-icon md">M↓</span> blog.md
+            </a>
+        </div>
+
+        <!-- Main Content (Editor Buffer) -->
+        <div class="editor-content">
+            <h1 id="build-started">Build Started…</h1>
+<p><code>[====&gt;               ] 25%</code></p>
+<blockquote>
+<p><strong>Warning:</strong> Unresolved external symbol
+<code>inspiration</code>. <strong>Note:</strong> Optimization level
+<code>-O0</code> (Draft mode). <strong>TODO:</strong> Linker searching
+for <code>time</code> library…</p>
+</blockquote>
+<p><em>Please check back after the linking phase completes.</em></p>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <div class="status-item">blog_20260121_85d33</div>
+                <div class="status-item">0 errors, 0 warnings</div>
+            </div>
+            <div class="status-right">
+                <div class="status-item" id="cursor-position">Ln 1, Col 1</div>
+                <div class="status-item">Spaces: 4</div>
+                <div class="status-item">UTF-8</div>
+                <div class="status-item">Markdown</div>
+                <div class="status-item">Prettier</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{const editorContent=document.querySelector('.editor-content');const statusCursor=document.getElementById('cursor-position');let lineCounter=1;function markLines(element){const blocks=element.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, pre, blockquote, tr');blocks.forEach(block=>{if(!block.querySelector('p, h1, h2, h3, h4, h5, h6, li, pre, blockquote, tr')){block.setAttribute('data-line',lineCounter++);block.style.position='relative';}});}
+markLines(editorContent);function updateCursorPosition(){const selection=window.getSelection();if(!selection.rangeCount)return;const range=selection.getRangeAt(0);const node=selection.anchorNode;const element=node.nodeType===3?node.parentNode:node;const lineElement=element.closest('[data-line]');if(lineElement){const lineNum=lineElement.getAttribute('data-line');const preCaretRange=range.cloneRange();preCaretRange.selectNodeContents(lineElement);preCaretRange.setEnd(range.endContainer,range.endOffset);const colNum=preCaretRange.toString().length+1;statusCursor.textContent=`Ln ${lineNum},Col ${colNum}`;}}
+editorContent.addEventListener('click',updateCursorPosition);editorContent.addEventListener('keyup',updateCursorPosition);});
+    </script>
+
+</html>

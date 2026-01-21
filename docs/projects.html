@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikolay Korovaiko - Projects</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Social Meta Tags -->
+    <meta property="og:title" content="Nikolay Korovaiko - Projects">
+    <meta property="og:description" content="Compiler Engineer. Performance Optimization. Distributed Systems.">
+    <meta property="og:image" content="https://korovaiko.dev/ascii_pic2.png">
+    <meta property="og:url" content="https://korovaiko.dev/projects.html">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+    <div class="editor-window">
+        <!-- Title Bar -->
+        <div class="title-bar">
+            <div class="window-controls">
+                <div class="control close"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
+            </div>
+            <div class="window-title">Projects — nikolayk</div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-bar">
+            <a href="index.html" class="tab ">
+                <span class="file-icon md">M↓</span> about_me.md
+            </a>
+            <a href="projects.html" class="tab active">
+                <span class="file-icon cpp">C++</span> projects.md
+            </a>
+            <a href="contact.html" class="tab ">
+                <span class="file-icon md">M↓</span> contact.md
+            </a>
+            <a href="resume.html" class="tab ">
+                <span class="file-icon md">M↓</span> resume.md
+            </a>
+            <a href="blog.html" class="tab ">
+                <span class="file-icon md">M↓</span> blog.md
+            </a>
+        </div>
+
+        <!-- Main Content (Editor Buffer) -->
+        <div class="editor-content">
+            <h2 id="projects">Projects</h2>
+<h3 id="pytorch"><a
+href="https://github.com/pytorch/pytorch/commits?author=krovatkin">PyTorch</a></h3>
+<p>An open source machine learning framework that accelerates the path
+from research prototyping to production deployment.</p>
+<h3 id="intel-ngraph-intel"><a
+href="https://github.com/NervanaSystems/ngraph/commits?author=krovatkin">Intel
+nGraph</a> (Intel)</h3>
+<p>An intermediate representation, compiler, and executor for deep
+learning models. It simplifies the realization of Deep Learning models
+across different frameworks and hardware backends.</p>
+<h3 id="chakracore"><a
+href="https://github.com/chakra-core/ChakraCore/commits?author=krovatkin">ChakraCore</a></h3>
+<p>The core part of the Chakra Javascript engine having high performance
+and used in Microsoft Edge.</p>
+<h3 id="eclipse-openj9-omr"><a
+href="https://github.com/eclipse-openj9/openj9">Eclipse OpenJ9 /
+OMR</a></h3>
+<p>A high performance, scalable, Java virtual machine implementation
+that is fully compliant with the Java Virtual Machine Specification.</p>
+<h2 id="publications">Publications</h2>
+<h3 id="ftl-model-compiler-framework">FTL Model Compiler Framework</h3>
+<p><em>Nuro.ai Blog · 2021</em><br />
+<a href="https://www.nuro.ai/blog/ftl-model-compiler-framework">Show
+publication</a></p>
+<p>For an autonomous vehicle (AV), fast and efficient model inference is
+critical. The FTL Model Compiler Framework addresses this by providing
+universal support for frameworks via ONNX, orchestrating graph
+segmentation for hardware backends like TensorRT, and optimizing with
+multiple sub-compiler passes.</p>
+<h3
+id="intel-ngraph-an-intermediate-representation-compiler-and-executor-for-deep-learning">Intel
+nGraph: An Intermediate Representation, Compiler, and Executor for Deep
+Learning</h3>
+<p><em>arXiv · Jan 24, 2018</em><br />
+<a href="https://arxiv.org/abs/1801.08058">Show publication</a></p>
+<p>The Deep Learning (DL) community sees many novel topologies published
+each year. Achieving high performance on each new topology remains
+challenging, as each requires some level of manual effort. This issue is
+compounded by the proliferation of frameworks and hardware platforms.
+The current approach, which we call “direct optimization”, requires deep
+changes within each framework to improve the training performance for
+each hardware backend (CPUs, GPUs, FPGAs, ASICs) and requires <span
+class="math inline">𝒪(<em>f</em><em>p</em>)</span> effort; where <span
+class="math inline"><em>f</em></span> is the number of frameworks and
+<span class="math inline"><em>p</em></span> is the number of platforms.
+While optimized kernels for deep-learning primitives are provided via
+libraries like Intel Math Kernel Library for Deep Neural Networks
+(MKL-DNN), there are several compiler-inspired ways in which performance
+can be further optimized. Building on our experience creating neon (a
+fast deep learning library on GPUs), we developed Intel nGraph, a soon
+to be open-sourced C++ library to simplify the realization of optimized
+deep learning performance across frameworks and hardware platforms.
+Initially-supported frameworks include TensorFlow, MXNet, and Intel neon
+framework. Initial backends are Intel Architecture CPUs (CPU), the
+Intel(R) Nervana Neural Network Processor(R) (NNP), and NVIDIA GPUs.
+Currently supported compiler optimizations include efficient memory
+management and data layout abstraction. In this paper, we describe our
+overall architecture and its core components. In the future, we envision
+extending nGraph API support to a wider range of frameworks, hardware
+(including FPGAs and ASICs), and compiler optimizations (training versus
+inference optimizations, multi-node and multi-device scaling via
+efficient sub-graph partitioning, and HW-specific compounding of
+operations).</p>
+<h3 id="trust-prediction-from-user-item-ratings">Trust prediction from
+user-item ratings</h3>
+<p><em>SpringerLink/Social Network Analysis and Mining, Volume 3 · Jan
+1, 2013</em><br />
+<a
+href="https://link.springer.com/article/10.1007/s13278-012-0056-x">Show
+publication</a></p>
+<p>Trust relationships between users in various online communities are
+notoriously hard to model for computer scientists. It can be easily
+verified that trying to infer trust based on the social network alone is
+often inefficient. Therefore, the avenue we explore is applying Data
+Mining algorithms to unearth latent relationships and patterns from
+background data. In this paper, we focus on a case where the background
+data are user ratings for online product reviews. We consider as a
+testing ground a large dataset provided by Epinions.com that contains a
+trust network as well as user ratings for reviews on products from a
+wide range of categories. In order to predict trust we define and
+compute a critical set of features, which we show to be highly effective
+in providing the basis for trust predictions. Then, we show that
+state-of-the-art classifiers can do an impressive job in predicting
+trust based on our extracted features. For this, we employ a variety of
+measures to evaluate the classification based on these features. We show
+that by carefully collecting and synthesizing readily available
+background information, such as ratings for online reviews, one can
+accurately predict social links based on trust.</p>
+<h3 id="predicting-trust-from-user-ratings">Predicting Trust from User
+Ratings</h3>
+<p><em>Elsevier/The 3rd International Conference on Ambient Systems,
+Networks and Technologies · Jan 1, 2012</em><br />
+<a
+href="https://www.sciencedirect.com/science/article/pii/S187705091200456X">Show
+publication</a></p>
+<p>Trust relationships between users in various online communities are
+notoriously hard to model for computer scientists. It can be easily
+verified that trying to infer trust based on the social network alone is
+often inefficient. Therefore, the avenue we explore is applying Data
+Mining algorithms to unearth latent relationships and patterns from
+background data. In this paper, we focus on a case where the background
+data are user ratings for online product reviews. We consider as a
+testing ground a large dataset provided by Epinions.com that contains a
+trust network as well as user ratings for reviews on products from a
+wide range of categories. In order to predict trust we define and
+compute a critical set of features, which we show to be highly effective
+in providing the basis for trust predictions. Then, we show that
+state-of-the-art classifiers can do an impressive job in predicting
+trust based on our extracted features. For this, we employ a variety of
+measures to evaluate the classification based on these features. We show
+that by carefully collecting and synthesizing readily available
+background information, such as ratings for online reviews, one can
+accurately predict social links based on trust.</p>
+<h3 id="predicting-trust-from-user-ratings-masters-thesis">Predicting
+trust from user ratings (Master’s Thesis)</h3>
+<p><em>University of Victoria · Jan 1, 2011</em><br />
+<a href="http://dspace.library.uvic.ca/handle/1828/3241">Show
+publication</a></p>
+<p>See more on <a
+href="https://dblp.org/pid/117/5209.html">DBLP</a>.</p>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <div class="status-item">projects_20260121_85d33</div>
+                <div class="status-item">0 errors, 0 warnings</div>
+            </div>
+            <div class="status-right">
+                <div class="status-item" id="cursor-position">Ln 1, Col 1</div>
+                <div class="status-item">Spaces: 4</div>
+                <div class="status-item">UTF-8</div>
+                <div class="status-item">C++</div>
+                <div class="status-item">Prettier</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{const editorContent=document.querySelector('.editor-content');const statusCursor=document.getElementById('cursor-position');let lineCounter=1;function markLines(element){const blocks=element.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, pre, blockquote, tr');blocks.forEach(block=>{if(!block.querySelector('p, h1, h2, h3, h4, h5, h6, li, pre, blockquote, tr')){block.setAttribute('data-line',lineCounter++);block.style.position='relative';}});}
+markLines(editorContent);function updateCursorPosition(){const selection=window.getSelection();if(!selection.rangeCount)return;const range=selection.getRangeAt(0);const node=selection.anchorNode;const element=node.nodeType===3?node.parentNode:node;const lineElement=element.closest('[data-line]');if(lineElement){const lineNum=lineElement.getAttribute('data-line');const preCaretRange=range.cloneRange();preCaretRange.selectNodeContents(lineElement);preCaretRange.setEnd(range.endContainer,range.endOffset);const colNum=preCaretRange.toString().length+1;statusCursor.textContent=`Ln ${lineNum},Col ${colNum}`;}}
+editorContent.addEventListener('click',updateCursorPosition);editorContent.addEventListener('keyup',updateCursorPosition);});
+    </script>
+
+</html>

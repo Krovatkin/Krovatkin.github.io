@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikolay Korovaiko - About Me</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Social Meta Tags -->
+    <meta property="og:title" content="Nikolay Korovaiko - About Me">
+    <meta property="og:description" content="Compiler Engineer. Performance Optimization. Distributed Systems.">
+    <meta property="og:image" content="https://korovaiko.dev/ascii_pic2.png">
+    <meta property="og:url" content="https://korovaiko.dev/index.html">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+    <div class="editor-window">
+        <!-- Title Bar -->
+        <div class="title-bar">
+            <div class="window-controls">
+                <div class="control close"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
+            </div>
+            <div class="window-title">About Me — nikolayk</div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs-bar">
+            <a href="index.html" class="tab active">
+                <span class="file-icon md">M↓</span> about_me.md
+            </a>
+            <a href="projects.html" class="tab ">
+                <span class="file-icon cpp">C++</span> projects.md
+            </a>
+            <a href="contact.html" class="tab ">
+                <span class="file-icon md">M↓</span> contact.md
+            </a>
+            <a href="resume.html" class="tab ">
+                <span class="file-icon md">M↓</span> resume.md
+            </a>
+            <a href="blog.html" class="tab ">
+                <span class="file-icon md">M↓</span> blog.md
+            </a>
+        </div>
+
+        <!-- Main Content (Editor Buffer) -->
+        <div class="editor-content">
+            <h1 id="about-me">About Me</h1>
+<div class="about-header">
+<div class="about-avatar">
+<p><img src="ascii_pic2.png" alt="Profile Logic" style="width: 140px; border-radius: 8px;"></p>
+</div>
+<div class="about-intro">
+<h4>
+<code>Hello World!</code>, My name is <strong>Nikolay
+Korovaiko</strong>.
+</h4>
+<h4>
+<em>I’m a Full-Stack Compiler Engineer with expansive experience in
+building and leading projects in Compilers and Runtimes, both AI and
+general purpose, greenfield and legacy!</em>
+</h4>
+</div>
+</div>
+<p>I <strong>DO</strong> mean full-stack!</p>
+<h5 id="middle-layer">Middle layer</h5>
+<p>The bulk of my experience is in the middle layer:</p>
+<ul>
+<li>I co-designed graph IR and built mutation and pattern matching APIs
+for nGraph. Added the OG optimizer passes for nGraph such fusers, CSE,
+Simplifier and led the implementation of many backend-specific passes
+for Intel’s CPUs and Nervana’s ASICs.</li>
+<li>I did the original SymInt design and implementation for
+PyTorch.</li>
+<li>At Nuro, I co-developed a graph compiler that intelligently
+orchestarted TensorRT and XLA to compile model components to work around
+the limitations of both.</li>
+<li>I extended OpenJ9’s Inliner to support multi-target inlining and
+receiver info propagation through bytecode-based call graphs.</li>
+</ul>
+<h5 id="backend">Backend</h5>
+<p>I worked on multiple x86 backends for ChakraCore and OpenJ9 and the
+AppleGPU backend implementing support for new ISA, new HW features,
+adding new peephole optimizations and improving heuristics in Register
+Allocator, StackSlotColouring, etc.</p>
+<h5 id="frontend">Frontend</h5>
+<p>Finally, I had a little bit of fun with TorchScript parser teaching
+it about list comprehensions and other miscelaneous pythonisms.</p>
+<h2 id="interests">Interests</h2>
+<ul>
+<li>Compilers &amp; Runtimes</li>
+<li>Full-Stack Performance: Distributed Training Systems to Instruction
+Scheduling</li>
+<li>GPU Kernel Authoring</li>
+<li>Applied AI</li>
+<li>Cats 🐈</li>
+<li>Hiking 🥾</li>
+</ul>
+        </div>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <div class="status-item">about_20260121_85d33</div>
+                <div class="status-item">0 errors, 0 warnings</div>
+            </div>
+            <div class="status-right">
+                <div class="status-item" id="cursor-position">Ln 1, Col 1</div>
+                <div class="status-item">Spaces: 4</div>
+                <div class="status-item">UTF-8</div>
+                <div class="status-item">Markdown</div>
+                <div class="status-item">Prettier</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{const editorContent=document.querySelector('.editor-content');const statusCursor=document.getElementById('cursor-position');let lineCounter=1;function markLines(element){const blocks=element.querySelectorAll('p, h1, h2, h3, h4, h5, h6, li, pre, blockquote, tr');blocks.forEach(block=>{if(!block.querySelector('p, h1, h2, h3, h4, h5, h6, li, pre, blockquote, tr')){block.setAttribute('data-line',lineCounter++);block.style.position='relative';}});}
+markLines(editorContent);function updateCursorPosition(){const selection=window.getSelection();if(!selection.rangeCount)return;const range=selection.getRangeAt(0);const node=selection.anchorNode;const element=node.nodeType===3?node.parentNode:node;const lineElement=element.closest('[data-line]');if(lineElement){const lineNum=lineElement.getAttribute('data-line');const preCaretRange=range.cloneRange();preCaretRange.selectNodeContents(lineElement);preCaretRange.setEnd(range.endContainer,range.endOffset);const colNum=preCaretRange.toString().length+1;statusCursor.textContent=`Ln ${lineNum},Col ${colNum}`;}}
+editorContent.addEventListener('click',updateCursorPosition);editorContent.addEventListener('keyup',updateCursorPosition);});
+    </script>
+
+</html>
